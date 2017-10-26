@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'mshahat-rmbp-mvn-version'
+      label 'master'
     }
     
   }
