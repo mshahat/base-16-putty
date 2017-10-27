@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('ant-version') {
       steps {
-        sh 'env'
+        sh 'java -version'
       }
     }
   }
