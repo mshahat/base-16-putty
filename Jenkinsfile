@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'master'
+    docker {
+      image 'maven:3-alpine'
     }
     
   }
@@ -17,13 +17,9 @@ pipeline {
         MAJOR_VERSION = '1'
       }
       steps {
-        sh '''#!/bin/bash -xe
-        mvn --version
+        sh '''mvn --version
         '''
       }
     }
-  }
-  environment {
-    MAJOR_VERSION = '1'
   }
 }
