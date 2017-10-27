@@ -13,12 +13,11 @@ pipeline {
         }
         
       }
-      environment {
-        MAJOR_VERSION = '1'
-      }
       steps {
         sh '''mvn --version
         '''
+        echo 'hello from the other side'
+        isUnix()
       }
     }
   }
