@@ -17,7 +17,9 @@ pipeline {
         MAJOR_VERSION = '1'
       }
       steps {
-        sh 'mvn --version'
+        sh '''#!/bin/bash -xe
+        mvn --version
+        '''
       }
     }
   }
