@@ -1,24 +1,12 @@
 pipeline {
-  agent {
-    node {
-      label 'master'
+    agent {
+        docker { image 'node:7-alpine' }
     }
-    
-  }
-  stages {
-    stage('build') {
-      agent {
-        node {
-          label 'master'
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
         }
-        
-      }
-      steps {
-        sh '''mvn --version
-        '''
-        echo 'hello from the other side'
-        isUnix()
-      }
     }
-  }
 }
