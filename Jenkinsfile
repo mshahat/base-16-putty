@@ -2,7 +2,12 @@ pipeline {
   agent any
   stages {
     stage('mvn-version') {
-      agent any
+      agent {
+        docker {
+          image 'maven:slim'
+        }
+
+      }
       steps {
         sh 'java -version'
       }
