@@ -4,7 +4,7 @@ pipeline {
     stage('mvn-version') {
       agent any
       steps {
-        sh 'java --version'
+        sh 'java -version'
       }
     }
   }
